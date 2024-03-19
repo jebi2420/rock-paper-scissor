@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="body">
     <div className="main">
       <Box title="You" item={userSelect}/>
       {/* <Box title="Computer"/> */}
