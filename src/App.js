@@ -12,7 +12,7 @@ import Box from './component/Box';
 const choice = {
   rock: {
      name: "Rock",
-     img: "https://variety.com/wp-content/uploads/2024/01/Dwayne-Johnson_credHuyDoan-e1705977711715.jpg?w=1000&h=563&crop=1"
+     img: "https://i.ebayimg.com/images/g/5hgAAOSwtfljWQIq/s-l1200.webp"
   },
   scissor: {
     name: "Scissor",
@@ -20,7 +20,7 @@ const choice = {
   },
   paper: {
     name: "Paper",
-    img:"https://m.media-amazon.com/images/I/61LpGWsUaLL.jpg"
+    img:"https://www.collinsdictionary.com/images/full/paper_111691001.jpg"
   }
 }
 function App() {
@@ -38,9 +38,9 @@ function App() {
     </div>
 
     <div className="main">
-      <button onClick={() => play("scissor")}>가위</button>
-      <button onClick={() => play("rock")}>바위</button>
-      <button onClick={() => play("paper")}>보</button>
+      <button onClick={() => play("scissor")}><img src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_scissors_icon_194407.png' /></button>
+      <button onClick={() => play("rock")}><img src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_rock_icon_194408.png'/></button>
+      <button onClick={() => play("paper")}><img src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_paper_icon_194460.png'/></button>
     </div>
     </div>
   );
