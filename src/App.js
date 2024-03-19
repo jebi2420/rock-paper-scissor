@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import './App.css';
 import Box from './component/Box';
 
@@ -23,17 +24,23 @@ const choice = {
   }
 }
 function App() {
+  const [userSelect, setUserSelect] = useState(null)
+
+  const play = (userChoice) => {
+    setUserSelect(choice[userChoice])
+  }
+
   return (
     <div>
     <div className="main">
-      <Box title="You"/>
-      <Box title="Computer"/>
+      <Box title="You" item={userSelect}/>
+      {/* <Box title="Computer"/> */}
     </div>
 
     <div className="main">
-      <button>가위</button>
-      <button>바위</button>
-      <button>보</button>
+      <button onClick={() => play("scissor")}>가위</button>
+      <button onClick={() => play("rock")}>바위</button>
+      <button onClick={() => play("paper")}>보</button>
     </div>
     </div>
   );
