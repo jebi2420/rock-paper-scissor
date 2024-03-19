@@ -38,9 +38,9 @@ function App() {
     </div>
 
     <div className="main">
-      <button onClick={() => play("scissor")}><img alt="scissor" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_scissors_icon_194407.png' /></button>
-      <button onClick={() => play("rock")}><img alt="rock" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_rock_icon_194408.png'/></button>
-      <button onClick={() => play("paper")}><img alt="paper" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_paper_icon_194460.png'/></button>
+      <button onClick={() => play("scissor")}><img alt="" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_scissors_icon_194407.png' /></button>
+      <button onClick={() => play("rock")}><img alt="" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_rock_icon_194408.png'/></button>
+      <button onClick={() => play("paper")}><img alt="" src='https://cdn.icon-icons.com/icons2/3194/PNG/512/hand_paper_icon_194460.png'/></button>
     </div>
     </div>
   );
