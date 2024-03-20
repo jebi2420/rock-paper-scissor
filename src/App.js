@@ -36,8 +36,16 @@ function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
     let computerChoice = randomChoice()
-    setComputerSelect(computerChoice || choice.default)
+    setComputerSelect(computerChoice)
     setResult(judgement(choice[userChoice], computerChoice))
+    
+  }
+
+  const randomChoice = () => {
+    let itemArray = Object.keys(choice); // 객체에 키값만 뽑아서 배열로 만들어주는 함수
+    let randomItem = Math.floor(Math.random() * itemArray.length);
+    let final = itemArray[randomItem]
+    return choice[final];
   }
 
   const judgement = (user, computer) => {
@@ -61,12 +69,7 @@ function App() {
       return computer.name == "Rock"?"win":"lose";
   }
 
-  const randomChoice = () => {
-    let itemArray = Object.keys(choice); // 객체에 키값만 뽑아서 배열로 만들어주는 함수
-    let randomItem = Math.floor(Math.random() * itemArray.length);
-    let final = itemArray[randomItem]
-    return choice[final];
-  }
+
 
   return (
     <div className="body">
