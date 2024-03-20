@@ -59,14 +59,14 @@ function App() {
     // user == "paper", computer == rock [user win]
     // user == paper, computer == "scissor" [user lose]
 
-    if(user.name == computer.name){
+    if(user.name === computer.name){
       return "tie";
-    }else if(user.name == "Rock")
-      return computer.name == "Scissor"?"win":"lose";
-    else if(user.name == "Scissor")
-      return computer.name == "Paper"?"win":"lose";
-    else if(user.name == "Paper")
-      return computer.name == "Rock"?"win":"lose";
+    }else if(user.name === "Rock")
+      return computer.name === "Scissor"?"win":"lose";
+    else if(user.name === "Scissor")
+      return computer.name === "Paper"?"win":"lose";
+    else if(user.name === "Paper")
+      return computer.name === "Rock"?"win":"lose";
   }
 
 
