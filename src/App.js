@@ -21,16 +21,44 @@ const choice = {
   paper: {
     name: "Paper",
     img:"https://www.collinsdictionary.com/images/full/paper_111691001.jpg"
+  },
+  default: {
+    name: "안내면 진거..",
+    img:"https://img.monstock.app/public/web/content/20220507/ba26c48c-7911-47e0-b8cb-a8019575c604.jpg"
   }
 }
 function App() {
-  const [userSelect, setUserSelect] = useState(null)
-  const [computerSelect, setComputerSelect]= useState(null)
+  const [userSelect, setUserSelect] = useState(choice.default);
+  const [computerSelect, setComputerSelect]= useState(choice.default);
+  const [result, setResult] = useState("");
+
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
     let computerChoice = randomChoice()
-    setComputerSelect(computerChoice)
+    setComputerSelect(computerChoice || choice.default)
+    setResult(judgement(choice[userChoice], computerChoice))
+  }
+
+  const judgement = (user, computer) => {
+    console.log("user : " + user, "computer : " + computer)
+
+    // user == computer tie
+    // user == "rock", computer == scissor [user win]
+    // user == rock , computer == "paper" [user lose]
+    // user == "scissor", computer paper [user win]
+    // user == scissor, computer == "rock" [user lose]
+    // user == "paper", computer == rock [user win]
+    // user == paper, computer == "scissor" [user lose]
+
+    if(user.name == computer.name){
+      return "tie";
+    }else if(user.name == "Rock")
+      return computer.name == "Scissor"?"win":"lose";
+    else if(user.name == "Scissor")
+      return computer.name == "Paper"?"win":"lose";
+    else if(user.name == "Paper")
+      return computer.name == "Rock"?"win":"lose";
   }
 
   const randomChoice = () => {
@@ -43,8 +71,8 @@ function App() {
   return (
     <div className="body">
     <div className="main">
-      <Box title="You" item={userSelect}/>
-      <Box title="Computer" item={computerSelect}/>
+      <Box title="You" item={userSelect} result={result}/>
+      <Box title="Computer" item={computerSelect} result={result}/>
     </div>
 
     <div className="main">
